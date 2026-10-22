@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+
+import 'telas/tela_boas_vindas.dart';
+
+void main() {
+  runApp(const MeuAplicativo());
+}
+
+class MeuAplicativo extends StatelessWidget {
+  const MeuAplicativo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Meu Aplicativo',
+      home: const TelasBoasVindas(),
+    );
+  }
+}
+
+
+
+import 'package:flutter/material.dart';
+
+class TelasBoasVindas extends StatelessWidget {
+  const TelasBoasVindas({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //Ultilizando a tela inteira, sem AppBar.
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        //iremos criar um fundo degradê de cor azul.
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFFF5F9FF), Color(0XFFD6EE8FF), Color(0XFF90CAF9)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+      ),
+    );
+  }
+}
